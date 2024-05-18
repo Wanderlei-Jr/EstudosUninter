@@ -1,34 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultor Profissional</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        .container {
+            display: grid;
+            grid-template-rows: auto auto 1fr auto;
+            grid-template-columns: 30% 65%;
+            gap: 10px;
+            padding: 0 25px 25px 25px;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        header {
+            grid-column: span 2;
+            background-color: #6A0DAD; /* Lilás escuro */
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .highlight {
+            grid-column: span 2;
+            background-color: #f0f0f0;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .image-section {
+            grid-row: 3;
+        }
+
+        .content-section {
+            grid-row: 3;
+        }
+
+        footer {
+            grid-column: span 2;
+            background-color: #6A0DAD; /* Lilás escuro */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        .spacer {
+            height: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Olá mundo</h1>
-    <a href="https://www.google.com">Google</a>
-    <br>
-    <img src="Papel de Parede - Desktop.png" alt="Logo i-Com" title="Logo i-Com" width="50%" height="50%">
-</body>
-<h1>Titulo 1</h1>
-<h2>Título 2</h2>
-<h3>Título 2</h2>
-<h4>Título 2</h2>
-<h5>Título 2</h2>
-<h6>Título 2</h2>
+    <div class="container">
+        <header>
+            <nav>
+                <a href="#treinador-corporativo">Treinador Corporativo</a> |
+                <a href="#perfil-academico">Perfil Acadêmico</a> |
+                <a href="#perfil-profissional">Perfil Profissional</a> |
+                <a href="#portfolio">Portfólio</a> |
+                <a href="#contato">Contato</a>
+            </nav>
+        </header>
 
-<h2>Lista não ordenada</h2>
-<ul>
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-</ul>
-    
-<h2>Lista ordenada</h2>
-<ol>
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-</ol>
+        <div class="highlight">
+            <!-- Esta seção será usada para destacar a página atual -->
+            <p id="section-title">Bem-vindo ao meu site!</p>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="image-section">
+            <!-- Imagem compatível com a seção atual -->
+            <img id="section-image" src="" alt="Imagem da Seção" style="max-width: 100%;">
+        </div>
+
+        <div class="content-section">
+            <!-- Conteúdo textual da seção atual -->
+            <div id="section-content">
+                <p>Este é o conteúdo da seção inicial.</p>
+            </div>
+        </div>
+
+        <footer>
+            TreinadorCorporativo.com - Copyright @2024 | Sua empresa pode mais, nós sabemos como ajudar.
+        </footer>
+    </div>
+
+    <script>
+        const sections = {
+            "treinador-corporativo": {
+                title: "Treinador Corporativo",
+                content: "Conteúdo sobre o treinador corporativo.",
+                image: "path/to/image1.jpg"
+            },
+            "perfil-academico": {
+                title: "Perfil Acadêmico",
+                content: "Conteúdo sobre o perfil acadêmico.",
+                image: "path/to/image2.jpg"
+            },
+            "perfil-profissional": {
+                title: "Perfil Profissional",
+                content: "Conteúdo sobre o perfil profissional.",
+                image: "path/to/image3.jpg"
+            },
+            "portfolio": {
+                title: "Portfólio",
+                content: "Conteúdo do portfólio.",
+                image: "path/to/image4.jpg"
+            },
+            "contato": {
+                title: "Contato",
+                content: "Informações de contato.",
+                image: "path/to/image5.jpg"
+            }
+        };
+
+        document.querySelectorAll("header nav a").forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                const sectionId = e.target.getAttribute("href").substring(1);
+                const section = sections[sectionId];
+                if (section) {
+                    document.getElementById("section-title").textContent = section.title;
+                    document.getElementById("section-content").innerHTML = `<p>${section.content}</p>`;
+                    document.getElementById("section-image").src = section.image;
+                    document.getElementById("section-image").alt = section.title;
+                }
+            });
+        });
+    </script>
+</body>
 </html>
