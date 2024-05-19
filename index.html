@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Configuração inicial do ambiente -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treinador Corporativo - Consultoria Organizacional</title>
+    <title>Consultor Profissional</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,6 +13,7 @@
             background-color: #fff;
         }
 
+        /* Configuração da estrutura da página */
         .container {
             display: grid;
             grid-template-rows: auto auto 1fr auto;
@@ -24,9 +26,9 @@
 
         header {
             grid-column: span 2;
-            background-color: #3c0130; /* Roxo escuro */
+            background-color: #4a013b; /* Lilás escuro */
             color: white;
-            padding: 15px;
+            padding: 5px;
             display: flex;
             align-items: center;
         }
@@ -34,6 +36,8 @@
         header nav {
             display: flex;
             gap: 15px;
+            margin-left: auto;
+            margin-right: 20px;
         }
 
         header nav a {
@@ -41,12 +45,17 @@
             text-decoration: none;
         }
 
+        header img {
+            cursor: pointer;
+            margin-right: auto;
+        }
+
         .highlight {
             grid-column: span 2;
             background-color: #f0f0f0;
-            padding: 15px;
+            padding: 3px;
             text-align: center;
-            font-size: 1.2em;
+            font-size: 1.6em;
         }
 
         .image-section {
@@ -59,23 +68,55 @@
 
         footer {
             grid-column: span 2;
-            background-color: #3c0130; /* Roxo escuro */
+            background-color: #4a013b; /* Lilás escuro */
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             font-size: 0.9em;
         }
 
         .spacer {
-            height: 20px;
+            height: 15px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4a013b; /* Lilás escuro */
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #4a013b;
         }
     </style>
 </head>
 <body>
+    <!-- Estruturação da Página -->
     <div class="container">
+        <!-- Header do tipo menu principal -->
         <header>
+            <img id="home-icon" src="img/Icone_TreinadorCorporativo.png" alt="Home" style="width: 40px; height: 40px;">
             <nav>
-                <a href="#treinador-corporativo">Treinador Corporativo</a> |
+                <a href="#servicos">Serviços</a> |
                 <a href="#perfil-academico">Perfil Acadêmico</a> |
                 <a href="#perfil-profissional">Perfil Profissional</a> |
                 <a href="#portfolio">Portfólio</a> |
@@ -84,71 +125,166 @@
         </header>
 
         <div class="highlight">
-            <!-- Esta seção será usada para destacar a página atual -->
-            <p id="section-title">Bem-vindo ao meu site!</p>
+            <!-- Esta seção será usada para destacar a página atual/inicial -->
+            <p id="section-title">Treinador Corporativo | Consultoria Organizacional</p>
         </div>
 
         <div class="spacer"></div>
 
         <div class="image-section">
-            <!-- Imagem compatível com a seção atual -->
+            <!-- Imagem compatível com a seção atual/inicial -->
             <img id="section-image" src="img/Imagem_Principal-index.png" alt="Imagem da Seção" style="max-width: 100%;">
         </div>
 
         <div class="content-section">
-            <!-- Conteúdo textual da seção atual -->
+            <!-- Conteúdo textual da seção atual/inicial -->
+            <!-- Este conteúdo será duplicado para ser acessado no home também -->
             <div id="section-content">
-                <p>Este é o conteúdo da seção inicial.</p>
+                <p style="font-size: 25px;">Nossa Consultoria</p>
+                <p>Somos especialistas na dinâmica oganizacional de processos e pessoas com foco na integração fluída e colaborativa para a produção de resultados com baixa carga de atrito.</p>
+                <p>Nossa abordagem de trabalho é apoiada em anos de experiência em análise e desenvolvimento de sistemas de gestão, planejamento e execução de projetos e gestão de operações tecnológicas, logísticas e comercais.</p>
+                <p>Além de sólidos fundamentos técnicos e operacionais de mercado, nossa expertise é complementada pelos estudos das cadeiras de Relações Públicas, Jornalismo, Gestão Financeira e Tributária e Ciências de Dados.</p>
+                <p>Nossa atuação não se limita a um escopo específico, exceto que por opção do cliente. Com nossa abordagem 360o, a cada departamento e processo que desenvolvemos, vamos explorando as conexões e dependências naturais dos fluxos de processos e investindo na melhoria integrada, pois, do contrário, criamos ilhas de melhorias que são limitadas pelos demais departamentos.</p>
+                <p>Nossas ações são focadas, mas não limitadas. Uma empresa é um sistema completo e complexo integrado. Tudo que é captado por nosso radar é apresentado à diretoria. Mantemos nosso foco e evoluímos passo a passo rumo à conclusão dos trabalhos com objetividade e critérios para máxima qualidade.</p>
             </div>
         </div>
 
         <footer>
-            TreinadorCorporativo.com - Copyright @2024 | Desde 2005 - Sua empresa pode mais, nós sabemos como ajudar.
+            Copyright @2024 | Sua empresa pode mais, nós sabemos como ajudar.
         </footer>
     </div>
 
     <script>
         const sections = {
-            "treinador-corporativo": {
-                title: "Treinador Corporativo",
-                content: "Conteúdo sobre o treinador corporativo.",
-                image: "path/to/image1.jpg"
+            "home": {
+                title: "Treinador Corporativo | Consultoria Organizacional",
+                content: `
+                    <p style="font-size: 25px;">Nossa Consultoria</p>
+                    <p>Somos especialistas na dinâmica oganizacional de processos e pessoas com foco na integração fluída e colaborativa para a produção de resultados com baixa carga de atrito.</p>
+                    <p>Nossa abordagem de trabalho é apoiada em anos de experiência em análise e desenvolvimento de sistemas de gestão, planejamento e execução de projetos e gestão de operações tecnológicas, logísticas e comercais.</p>
+                    <p>Além de sólidos fundamentos técnicos e operacionais de mercado, nossa expertise é complementada pelos estudos das cadeiras de Relações Públicas, Jornalismo, Gestão Financeira e Tributária e Ciências de Dados.</p>
+                    <p>Nossa atuação não se limita a um escopo específico, exceto que por opção do cliente. Com nossa abordagem 360o, a cada departamento e processo que desenvolvemos, vamos explorando as conexões e dependências naturais dos fluxos de processos e investindo na melhoria integrada, pois, do contrário, criamos ilhas de melhorias que são limitadas pelos demais departamentos.</p>
+                    <p>Nossas ações são focadas, mas não limitadas. Uma empresa é um sistema completo e complexo integrado. Tudo que é captado por nosso radar é apresentado à diretoria. Mantemos nosso foco e evoluímos passo a passo rumo à conclusão dos trabalhos com objetividade e critérios para máxima qualidade.</p>
+                `,
+                image: "img/Imagem_Principal-index.png"
+            },
+            "servicos": {
+                title: "Serviços",
+                content: `
+                    <p style="font-size: 25px;">O que Entregamos</p>
+                    <p>Como especialistas em reestrutração e planejamento de processos, com sólida expertise na elaboração de estratégias operacionais e comerciais, nos dedicamos ao desenvolvimento de profissionais e equipes em formas de trabalho mais fluídas e integradas em todas as áreas da empresa.</p>
+                    <p>- Revisão, Ajuste e Reestruturação do Plano de Cargos e Salários;</p>
+                    <p>- Mapeamento e Documentação dos Perfis Profissionais;</p>
+                    <p>- Reengenharia das Políticas e Práticas Comerciais;</p>
+                    <p>- Implantação de Gestão de Marketing e Publicidade;</p>
+                    <p>- Transformação técnica e operacional do Ponto de Vendas;</p>
+                    <p>E muito mais...
+                    <br><br><br>
+                    <p>Entre em contato e VAMOS CONVERSAR.</p>
+                `,
+                image: "img/Imagem_Servicos.png"
             },
             "perfil-academico": {
                 title: "Perfil Acadêmico",
-                content: "Conteúdo sobre o perfil acadêmico.",
-                image: "path/to/image2.jpg"
+                content: `
+                <p style="font-size: 25px;">O que Estudamos</p>
+                <p>Nossa base acadêmica tem uma composição bem peculiar e, justamente, sustenta nossa abordagem 360o nos trabalhos que desenvolvemos.</p>
+                <p>Na área de tecnologia, iniciamos com o curso técnico de Processamento de Dados, onde aprendemos os princípios dos sistemas operacionais, lógica e linguagem de programação, estruturas de dados e análie e desenvolvimento de sistemas.</p>
+                <p>Na área da comunicação, uma paixão pessoal, iniciamos com o curso de Relações Públicas e depois Jornalismo. A comunicação social é a base de toda organização social e as empresas não são diferentes. Muitos dos problemas das empresas são originados nas falhas de comunicação, muito além das falhas de processos.</p>
+                <p>Na área de administração, a opção foi buscar um curso com conteúdo técnico e pertinente ao mundo corporativo. O Tecnólogo em Gestão Financeira e Tributária foi muito importante para desenvolver uma visão mais técnica e analítica dos princípios de planejamento e controle de resultados.</p>
+                <br><br>
+                <p>Entre em contato e VAMOS CONVERSAR.</p>                `,
+                image: "img/Imagem_PerfilAcademico.png"
             },
             "perfil-profissional": {
                 title: "Perfil Profissional",
-                content: "Conteúdo sobre o perfil profissional.",
-                image: "path/to/image3.jpg"
+                content: `
+                <p style="font-size: 25px;">O que Fazemos</p>
+                <p>Nossas competências profissionais são compostas por experiências variadas e acumulativas, começando pela área de tecnololgia, evoluindo para a gestão, passando pela operação em varejo e se consolidando na consultoria especializada em processos e pessoas.</p>
+                <p>Na área de tecnologia e processos, começamos com sistemas de informação, passando por suporte técnico, análise e desenvolvimento de sistemas e chegando à gestão de TI. Tendo atuado em software houses, empresas de telecom, passando por indústrias e pelo varejo.</p>
+                <p>Na área de gestão, coordenamos equipes de tecnologia, equipes de operações fabrís e logísticas e equipes comerciais. Desenvolvemos e implementamos métodos e processos para direcionamento e engajamento com base em modelos orientados a resultados.</p>
+                <p>Na consultoria, nos estabelecemos com o diferencial de atuar com uma abordagem 360o, integrando processos e equipes de maneira evolutiva. Devido à expertise em áreas corporativas e segmentos de mercado variados, atuamos muito próximo à execução dos trabalhos, não apenas nos treinamentos conceituais.</p>
+                <br><br>
+                <p>Entre em contato e VAMOS CONVERSAR.</p>                `,
+                image: "img/Imagem_PerfilProfissional.png"
             },
             "portfolio": {
                 title: "Portfólio",
-                content: "Conteúdo do portfólio.",
-                image: "path/to/image4.jpg"
+                content: `
+                <br><br><br><br><br>
+                <p style="font-size: 25px; text-align: center;">PÁGINA EM CONSTRUÇÃO</p>
+                <p style="text-align: center;">Volte em Breve e Confira Nossas REALIZAÇÕES.</p>
+                `,
+                image: "img/Imagem_Portfolio.png"
             },
+            /* Montagem inpage do formulário de contato */
+            /* Estou testando obrigatoriedade de digitação e formatação de campos */
+            /* O botão enviar mostra uma mensagem de sucesso mas não faz nada efetivamente */
             "contato": {
                 title: "Contato",
-                content: "Informações de contato.",
-                image: "path/to/image5.jpg"
+                content: `
+                    <form id="contact-form">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                        
+                        <label for="empresa">Empresa:</label>
+                        <input type="text" id="empresa" name="empresa" required>
+                        
+                        <label for="email">e-Mail:</label>
+                        <input type="email" id="email" name="email" required>
+                        
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" pattern="[0-9]{2} [0-9]{8}" placeholder="DD 12346789" required>
+                        
+                        <label for="whatsapp">Whatsapp:</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" pattern="[0-9]{2} [0-9]{9}" placeholder="DD 912345678" required>
+                        
+                        <label for="interesse">Interesse:</label>
+                        <textarea id="interesse" name="interesse" rows="4" required></textarea>
+                        
+                        <button type="submit">Enviar</button>
+                    </form>
+                `,
+                image: "img/Imagem_Contato.png"
             }
         };
 
+        // Função para atualizar a seção com base no ID fornecido, deixando a highlight dinâmica
+        function updateSection(sectionId) {
+            const section = sections[sectionId];
+            if (section) {
+                document.getElementById("section-title").textContent = section.title;
+                document.getElementById("section-content").innerHTML = section.content;
+                document.getElementById("section-image").src = section.image;
+                document.getElementById("section-image").alt = section.title;
+
+                // Adicionar evento ao formulário de contato se a seção for "contato"
+                if (sectionId === "contato") {
+                    document.getElementById("contact-form").addEventListener("submit", function(e) {
+                        e.preventDefault();
+                        alert("Obrigado pelo contato. Retornaremos em breve.");
+                        this.reset();
+                    });
+                }
+            }
+        }
+
+        // Adicionar evento de clique ao ícone da home
+        document.getElementById("home-icon").addEventListener("click", () => {
+            updateSection("home");
+        });
+
+        // Adicionar evento de clique aos links do menu
         document.querySelectorAll("header nav a").forEach(link => {
             link.addEventListener("click", (e) => {
                 e.preventDefault();
                 const sectionId = e.target.getAttribute("href").substring(1);
-                const section = sections[sectionId];
-                if (section) {
-                    document.getElementById("section-title").textContent = section.title;
-                    document.getElementById("section-content").innerHTML = `<p>${section.content}</p>`;
-                    document.getElementById("section-image").src = section.image;
-                    document.getElementById("section-image").alt = section.title;
-                }
+                updateSection(sectionId);
             });
         });
+
+        // Atualizar a seção inicial ao carregar a página
+        updateSection("home");
     </script>
 </body>
 </html>
